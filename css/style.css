@@ -46,22 +46,21 @@ height:auto;
 
 .rix-btn{
 
-```
-background:transparent;
-color:#00bfff;
+    background:transparent;
 
-border:1px solid #00bfff;
+    color:#00bfff;
 
-border-radius:40px;
+    border:1px solid #00bfff;
 
-padding:14px 30px;
+    padding:14px 28px;
 
-font-size:16px;
+    border-radius:30px;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.3s;
-```
+    font-size:16px;
+
+    transition:.3s;
 
 }
 
