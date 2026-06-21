@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>RiskReflex</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    font-family:'Inter',sans-serif;
+    color:#fff;
+    overflow:hidden;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.logo{
+    width:180px;
+    margin-bottom:30px;
+}
+
+.logo img{
+    width:100%;
+    height:auto;
+}
+
+h1{
+    font-size:72px;
+    font-weight:800;
+    letter-spacing:-2px;
+    margin-bottom:15px;
+}
+
+.tagline{
+    font-size:22px;
+    color:#8FA3BF;
+    margin-bottom:40px;
+    letter-spacing:0.5px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 40px;
+    background:#1E88E5;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    transition:all .3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 25px rgba(30,136,229,.5);
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:48px;
+    }
+
+    .tagline{
+        font-size:18px;
+    }
+
+    .logo{
+        width:120px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="logo">
+            <!-- Replace with your logo -->
+            <img src="images/riskreflex-logo.png" alt="RiskReflex">
+        </div>
+
+        <h1>RiskReflex</h1>
+
+        <div class="tagline">
+            AI Governance • Cyber Risk Intelligence
+        </div>
+
+        <a href="#" class="btn">
+            Explore Platform
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>
