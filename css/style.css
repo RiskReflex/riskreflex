@@ -94,30 +94,83 @@ box-shadow:
 
 /* ORB */
 
-.orb{
+.orb-container{
 
     position:relative;
 
-   width:260px;
-height:260px;
+    width:260px;
+    height:260px;
 
-    margin-bottom:50px;
+    margin-bottom:60px;
+}
+
+.orb{
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    left:20px;
+    top:20px;
 
     border-radius:50%;
 
     background:
     radial-gradient(
-    circle,
-    rgba(0,191,255,.9) 0%,
-    rgba(0,191,255,.3) 40%,
-    rgba(0,0,0,.95) 70%
+        circle,
+        #2bcfff 0%,
+        #0077ff 50%,
+        #00111f 100%
     );
 
     box-shadow:
-    0 0 30px #00bfff,
-    0 0 60px #00bfff,
-    0 0 120px #0078ff;
+        0 0 30px #00bfff,
+        0 0 70px #00bfff,
+        0 0 140px #0077ff;
 
+    transition:0.3s;
+}
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,191,255,.2);
+}
+
+.ring1{
+
+    inset:0;
+
+    animation:spin 12s linear infinite;
+}
+
+.ring2{
+
+    inset:-20px;
+
+    animation:spin 18s linear infinite reverse;
+}
+
+.ring3{
+
+    inset:-40px;
+
+    animation:spin 25s linear infinite;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 .orb::before{
