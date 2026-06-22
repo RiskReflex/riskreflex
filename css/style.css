@@ -130,7 +130,29 @@ ORB
 /* CORE */
 
 .orb-core{
-    flex-shrink:0;
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle at 40% 35%,
+        #5fe8ff 0%,
+        #18cfff 18%,
+        #008cff 45%,
+        #001421 80%,
+        #000 100%
+    );
+
+    box-shadow:
+        0 0 30px #00bfff,
+        0 0 80px #00bfff,
+        0 0 180px #0077ff;
+
+    z-index:10;
 }
 
 animation:pulse 4s ease-in-out infinite;
