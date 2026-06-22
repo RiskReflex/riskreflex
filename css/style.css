@@ -36,24 +36,22 @@ HEADER
 ========================= */
 
 header{
-position:absolute;
-top:30px;
-left:50px;
-right:50px;
+    position:absolute;
 
-```
-display:flex;
-justify-content:space-between;
-align-items:center;
+    top:35px;
+    left:60px;
+    right:60px;
 
-z-index:1000;
-```
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
+    z-index:1000;
 }
 
 .logo{
-width:220px;
-height:auto;
+    width:280px;
+    height:auto;
 }
 
 .rix-btn{
@@ -96,15 +94,20 @@ CENTER
 
 .center-content{
     position:absolute;
-    top:50%;
+
+    top:52%;
     left:50%;
+
     transform:translate(-50%,-50%);
 
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
 
     text-align:center;
+
+    width:100%;
 }
 
 /* =========================
@@ -112,46 +115,23 @@ ORB
 ========================= */
 
 .orb-container{
+    position:relative;
 
-```
-position:relative;
+    width:420px;
+    height:420px;
 
-width:420px;
-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-margin-bottom:40px;
-```
-
+    margin-bottom:60px;
 }
 
 /* CORE */
 
 .orb-core{
-
-```
-position:absolute;
-
-width:260px;
-height:260px;
-
-left:50%;
-top:50%;
-
-transform:translate(-50%,-50%);
-
-border-radius:50%;
-
-overflow:hidden;
-
-background:
-radial-gradient(
-    circle at 40% 35%,
-    #68ecff 0%,
-    #18d3ff 15%,
-    #008cff 45%,
-    #00131f 80%,
-    #000 100%
-);
+    flex-shrink:0;
+}
 
 animation:pulse 4s ease-in-out infinite;
 
@@ -224,20 +204,16 @@ RINGS
 ========================= */
 
 .ring{
+    position:absolute;
 
-```
-position:absolute;
+    border-radius:50%;
 
-left:50%;
-top:50%;
+    border:1px solid rgba(0,191,255,.08);
 
-transform:translate(-50%,-50%);
+    top:50%;
+    left:50%;
 
-border-radius:50%;
-
-border:1px solid rgba(0,191,255,.12);
-```
-
+    transform:translate(-50%,-50%);
 }
 
 .ring1{
@@ -278,29 +254,17 @@ TEXT
 ========================= */
 
 h1{
+    font-size:84px;
+    letter-spacing:14px;
+    font-weight:800;
 
-```
-font-size:72px;
-
-letter-spacing:12px;
-
-font-weight:800;
-
-margin-bottom:20px;
-```
-
+    margin-bottom:25px;
 }
 
 h2{
-
-```
-font-size:22px;
-
-color:#00bfff;
-
-margin-bottom:20px;
-```
-
+    font-size:24px;
+    color:#00bfff;
+    margin-bottom:20px;
 }
 
 .tagline{
