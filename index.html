@@ -1,103 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskReflex | AI Governance & Cyber Risk</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <title>RiskReflex | Understand Risk Before Impact</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /* The Cyber Grid */
+            background-image: 
+                linear-gradient(to right, rgba(30, 58, 138, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 58, 138, 0.07) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+            overflow-x: hidden;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        /* Boot Sequence Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+        .animate-boot-header { animation: fadeInDown 0.8s ease-out forwards; }
+        .animate-boot-hero { animation: fadeInUp 0.8s ease-out 0.6s forwards; opacity: 0; }
+        .animate-boot-nodes { animation: fadeInUp 1s ease-out 1s forwards; opacity: 0; }
+        .animate-spin-slow { animation: spinSlow 20s linear infinite; }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col relative selection:bg-blue-500/30">
 
-<body>
+    <div class="absolute inset-0 z-[-1] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-black to-transparent"></div>
 
-    <!-- Background Glow -->
-    <div class="background-glow"></div>
-
-    <!-- Header -->
-    <header>
-
-        <div class="logo-section">
-            <img src="images/logo.png" alt="RiskReflex" class="logo">
+    <header class="animate-boot-header flex justify-between items-center p-6 sm:p-10">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 flex items-center justify-center border border-blue-500/30 bg-blue-900/20 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <img src="images/icon.png" alt="RiskReflex Icon" class="w-6 h-6 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="text-blue-400 font-bold text-xl hidden">R</span>
+            </div>
+            
+            <div>
+                <h1 class="text-xl font-semibold tracking-[0.2em] text-gray-100 flex items-center gap-2">
+                    RISKREFLEX
+                </h1>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                    <p class="text-[9px] text-blue-400 tracking-widest uppercase">System Online</p>
+                </div>
+            </div>
         </div>
-
-        <button class="rix-btn">
-            ENTER RIX
+        <button class="group relative px-6 py-2 border border-blue-500/50 bg-black/50 overflow-hidden transition-all hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] flex items-center gap-2 cursor-pointer">
+            <span class="text-xs tracking-widest text-blue-100">ENTER RIX</span>
+            <i data-lucide="activity" class="w-4 h-4 text-blue-400"></i>
         </button>
-
     </header>
 
-    <!-- Main Hero -->
-    <main>
+    <main class="flex-grow flex flex-col items-center justify-center px-4 mt-8">
+        
+        <div class="animate-boot-hero relative flex justify-center items-center mb-16">
+            <div class="absolute w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] rounded-full border border-blue-500/20 animate-spin-slow"></div>
+            <div class="w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-blue-900/10 backdrop-blur-md border border-blue-500/40 shadow-[0_0_60px_rgba(59,130,246,0.2)] flex items-center justify-center">
+                <img src="images/badge.png" alt="RiskReflex Badge" class="w-24 h-24 sm:w-32 sm:h-32 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="text-4xl sm:text-6xl font-light text-transparent bg-clip-text bg-gradient-to-b from-white to-blue-500/50 tracking-widest hidden">RR</span>
+            </div>
+        </div>
 
-        <section class="hero">
+        <div class="animate-boot-hero text-center mb-20">
+            <h2 class="text-3xl sm:text-5xl font-light tracking-[0.4em] mb-4 text-white">RISKREFLEX</h2>
+            <h3 class="text-xs sm:text-sm text-blue-400 tracking-[0.3em] mb-8 uppercase">Understand Risk Before Impact</h3>
+            
+            <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-[10px] text-gray-500 tracking-widest font-mono">
+                <span>[ BCMS: ACTIVE ]</span>
+                <span class="hidden sm:inline">•</span>
+                <span>[ ISO 27001 METRICS: SYNCED ]</span>
+                <span class="hidden sm:inline">•</span>
+                <span>[ AI GOVERNANCE: MONITORING ]</span>
+            </div>
+        </div>
 
-            <div class="center-content">
-
-                <!-- Premium Orb -->
-                <div class="orb-container">
-
-                    <div class="ring ring1"></div>
-                    <div class="ring ring2"></div>
-                    <div class="ring ring3"></div>
-
-                    <div class="orb-core">
-
-                        <!-- Optional R Logo inside orb -->
-                        <img
-                            src="images/rr-icon.png"
-                            alt="RiskReflex"
-                            class="orb-logo">
-
+        <div class="animate-boot-nodes relative w-full max-w-4xl pb-20">
+            <div class="absolute top-6 left-10 right-10 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent z-[-1]"></div>
+            
+            <div class="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between items-start gap-6 sm:gap-0 relative z-10 px-2 sm:px-8">
+                
+                <div class="flex flex-col items-center gap-4 group cursor-pointer w-20">
+                    <div class="w-12 h-12 rotate-45 border border-blue-900/50 bg-black/80 flex items-center justify-center transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-900/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <i data-lucide="layers" class="w-5 h-5 text-gray-500 -rotate-45 group-hover:text-blue-400"></i>
                     </div>
-
+                    <span class="text-[9px] tracking-widest text-gray-500 group-hover:text-gray-300">PLATFORM</span>
                 </div>
 
-                <!-- Branding -->
+                <div class="flex flex-col items-center gap-4 group cursor-pointer w-20">
+                    <div class="w-12 h-12 rotate-45 border border-blue-900/50 bg-black/80 flex items-center justify-center transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-900/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-gray-500 -rotate-45 group-hover:text-blue-400"></i>
+                    </div>
+                    <span class="text-[9px] tracking-widest text-gray-500 group-hover:text-gray-300">SOLUTIONS</span>
+                </div>
 
-                <h1>RISKREFLEX</h1>
+                <div class="flex flex-col items-center gap-4 group cursor-pointer w-20">
+                    <div class="w-12 h-12 rotate-45 border border-blue-400 bg-blue-900/40 shadow-[0_0_20px_rgba(59,130,246,0.6)] flex items-center justify-center transition-all duration-300">
+                        <i data-lucide="cpu" class="w-6 h-6 text-blue-200 -rotate-45"></i>
+                    </div>
+                    <span class="text-[9px] tracking-widest text-blue-300 font-semibold">RIX AI</span>
+                </div>
 
-                <h2>
-                    UNDERSTAND RISK BEFORE IMPACT
-                </h2>
+                <div class="flex flex-col items-center gap-4 group cursor-pointer w-20">
+                    <div class="w-12 h-12 rotate-45 border border-blue-900/50 bg-black/80 flex items-center justify-center transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-900/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <i data-lucide="search" class="w-5 h-5 text-gray-500 -rotate-45 group-hover:text-blue-400"></i>
+                    </div>
+                    <span class="text-[9px] tracking-widest text-gray-500 group-hover:text-gray-300">RESEARCH</span>
+                </div>
 
-                <p class="tagline">
-                    AI GOVERNANCE • CYBER RISK INTELLIGENCE • FUTURE READY
-                </p>
+                <div class="flex flex-col items-center gap-4 group cursor-pointer w-20">
+                    <div class="w-12 h-12 rotate-45 border border-blue-900/50 bg-black/80 flex items-center justify-center transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-900/20 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        <i data-lucide="user" class="w-5 h-5 text-gray-500 -rotate-45 group-hover:text-blue-400"></i>
+                    </div>
+                    <span class="text-[9px] tracking-widest text-gray-500 group-hover:text-gray-300">ABOUT</span>
+                </div>
 
             </div>
-
-        </section>
-
+        </div>
     </main>
 
-    <!-- Navigation Nodes -->
-
-    <nav class="node-menu">
-
-        <a href="#">Platform</a>
-
-        <a href="#">Solutions</a>
-
-        <a href="#">Research</a>
-
-        <a href="#">RIX AI</a>
-
-        <a href="#">About</a>
-
-        <a href="#">Contact</a>
-
-    </nav>
-
-    <!-- Orb Animation Engine -->
-    <script src="js/orb.js"></script>
-
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-
 </html>
