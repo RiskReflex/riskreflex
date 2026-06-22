@@ -1,1 +1,1 @@
-// js/app.js
+console.log("RiskReflex Initialized");
