@@ -1,0 +1,116 @@
+/* MAIN ORB */
+
+.orb-container{
+
+    position:relative;
+
+    width:300px;
+    height:300px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:50px;
+}
+
+/* CORE */
+
+.orb-core{
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        #17d7ff 0%,
+        #008cff 45%,
+        #00131c 75%,
+        #000 100%
+    );
+
+    box-shadow:
+        0 0 30px #00bfff,
+        0 0 80px #00bfff,
+        0 0 150px #0077ff;
+
+    animation:
+        pulse 4s ease-in-out infinite;
+}
+
+/* RINGS */
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,191,255,.25);
+
+    animation:spin 15s linear infinite;
+}
+
+.ring1{
+
+    width:260px;
+    height:260px;
+
+    animation-duration:12s;
+}
+
+.ring2{
+
+    width:320px;
+    height:320px;
+
+    animation-duration:18s;
+    animation-direction:reverse;
+}
+
+.ring3{
+
+    width:380px;
+    height:380px;
+
+    animation-duration:24s;
+}
+
+/* ANIMATION */
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        box-shadow:
+        0 0 30px #00bfff,
+        0 0 80px #00bfff,
+        0 0 150px #0077ff;
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        box-shadow:
+        0 0 50px #00d9ff,
+        0 0 120px #00d9ff,
+        0 0 220px #0077ff;
+    }
+}
