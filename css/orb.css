@@ -16,29 +16,78 @@
 
 /* CORE */
 
-.orb-core{
+.orb-core {
 
-    width:220px;
-    height:220px;
+    position: relative;
 
-    border-radius:50%;
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
 
     background:
     radial-gradient(
-        circle,
-        #17d7ff 0%,
+        circle at 40% 35%,
+        #5fe8ff 0%,
+        #18cfff 18%,
         #008cff 45%,
-        #00131c 75%,
+        #001421 80%,
         #000 100%
     );
 
     box-shadow:
         0 0 30px #00bfff,
         0 0 80px #00bfff,
-        0 0 150px #0077ff;
+        0 0 180px #0077ff;
 
-    animation:
-        pulse 4s ease-in-out infinite;
+    animation: pulse 4s ease-in-out infinite;
+
+    overflow: hidden;
+}
+
+.orb-core::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    top: -60px;
+    left: -60px;
+
+    background:
+    conic-gradient(
+        transparent,
+        rgba(0,191,255,.8),
+        transparent,
+        rgba(0,120,255,.5),
+        transparent
+    );
+
+    animation: spin 8s linear infinite;
+
+    opacity: .8;
+}
+
+.orb-core::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:30px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.25),
+        transparent 70%
+    );
+
 }
 
 /* RINGS */
