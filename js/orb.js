@@ -1,16 +1,15 @@
 const orb = document.querySelector('.orb-core');
 
-document.addEventListener('mousemove', (e) => {
+let angle = 0;
 
-```
-const x =
-    (window.innerWidth / 2 - e.clientX) / 60;
+function animateOrb(){
 
-const y =
-    (window.innerHeight / 2 - e.clientY) / 60;
+    angle += 0.4;
 
-orb.style.marginLeft = `${-x}px`;
-orb.style.marginTop = `${-y}px`;
-```
+    orb.style.transform =
+        `rotate(${angle}deg) scale(${1 + Math.sin(angle/20)*0.02})`;
 
-});
+    requestAnimationFrame(animateOrb);
+}
+
+animateOrb();
