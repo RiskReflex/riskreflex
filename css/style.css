@@ -4,20 +4,36 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Inter',sans-serif;
 background:#000;
 color:#fff;
-font-family:'Inter',sans-serif;
-overflow:hidden;
 }
 
 .hero{
 position:relative;
 width:100%;
 height:100vh;
+overflow:hidden;
+
+```
+background:
+radial-gradient(
+    circle at center,
+    rgba(0,120,255,.12),
+    transparent 60%
+),
+#000;
+```
+
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 header{
 position:absolute;
@@ -30,7 +46,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-z-index:100;
+z-index:1000;
 ```
 
 }
@@ -45,9 +61,9 @@ height:auto;
 ```
 background:transparent;
 
-border:1px solid #00bfff;
-
 color:#00bfff;
+
+border:1px solid #00bfff;
 
 padding:14px 28px;
 
@@ -69,143 +85,205 @@ color:#000;
 
 box-shadow:
 0 0 20px #00bfff,
-0 0 40px #00bfff;
+0 0 50px #00bfff;
 ```
 
 }
 
-/* CENTER */
+/* =========================
+CENTER
+========================= */
 
 .center-content{
 
-    position:absolute;
+```
+position:absolute;
 
-    top:50%;
-    left:50%;
+left:50%;
+top:50%;
 
-    transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+display:flex;
+flex-direction:column;
+align-items:center;
 
-    text-align:center;
+text-align:center;
+
+z-index:10;
+```
+
 }
 
-/* ORB */
+/* =========================
+ORB
+========================= */
 
 .orb-container{
 
-    position:relative;
+```
+position:relative;
 
-    width:260px;
-    height:260px;
+width:420px;
+height:420px;
 
-    margin-bottom:60px;
+margin-bottom:40px;
+```
+
 }
 
-.orb{
+/* CORE */
 
-    position:absolute;
+.orb-core{
 
-    width:220px;
-    height:220px;
+```
+position:absolute;
 
-    left:20px;
-    top:20px;
+width:260px;
+height:260px;
 
-    border-radius:50%;
+left:50%;
+top:50%;
 
-    background:
-    radial-gradient(
-        circle,
-        #2bcfff 0%,
-        #0077ff 50%,
-        #00111f 100%
-    );
+transform:translate(-50%,-50%);
 
-    box-shadow:
-        0 0 30px #00bfff,
-        0 0 70px #00bfff,
-        0 0 140px #0077ff;
+border-radius:50%;
 
-    transition:0.3s;
+overflow:hidden;
+
+background:
+radial-gradient(
+    circle at 40% 35%,
+    #68ecff 0%,
+    #18d3ff 15%,
+    #008cff 45%,
+    #00131f 80%,
+    #000 100%
+);
+
+animation:pulse 4s ease-in-out infinite;
+
+box-shadow:
+    0 0 40px #00bfff,
+    0 0 120px #00bfff,
+    0 0 220px rgba(0,191,255,.6);
+
+z-index:5;
+```
+
 }
+
+/* ENERGY SWIRL */
+
+.orb-core::before{
+
+```
+content:"";
+
+position:absolute;
+
+width:420px;
+height:420px;
+
+top:-80px;
+left:-80px;
+
+background:
+conic-gradient(
+    transparent,
+    rgba(0,191,255,.9),
+    transparent,
+    rgba(0,120,255,.5),
+    transparent
+);
+
+animation:spin 8s linear infinite;
+
+opacity:.7;
+```
+
+}
+
+/* INNER CORE */
+
+.orb-core::after{
+
+```
+content:"";
+
+position:absolute;
+
+inset:35px;
+
+border-radius:50%;
+
+background:
+radial-gradient(
+    circle,
+    rgba(255,255,255,.35),
+    transparent 70%
+);
+```
+
+}
+
+/* =========================
+RINGS
+========================= */
 
 .ring{
 
-    position:absolute;
+```
+position:absolute;
 
-    border-radius:50%;
+left:50%;
+top:50%;
 
-    border:1px solid rgba(0,191,255,.2);
+transform:translate(-50%,-50%);
+
+border-radius:50%;
+
+border:1px solid rgba(0,191,255,.12);
+```
+
 }
 
 .ring1{
 
-    inset:0;
+```
+width:300px;
+height:300px;
 
-    animation:spin 12s linear infinite;
+animation:spin 10s linear infinite;
+```
+
 }
 
 .ring2{
 
-    inset:-20px;
+```
+width:360px;
+height:360px;
 
-    animation:spin 18s linear infinite reverse;
+animation:spinReverse 16s linear infinite;
+```
+
 }
 
 .ring3{
 
-    inset:-40px;
-
-    animation:spin 25s linear infinite;
-}
-
-@keyframes spin{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.orb::before{
-
 ```
-content:"";
+width:420px;
+height:420px;
 
-position:absolute;
-
-inset:-25px;
-
-border-radius:50%;
-
-border:1px solid rgba(0,191,255,.35);
+animation:spin 24s linear infinite;
 ```
 
 }
 
-.orb::after{
-
-```
-content:"";
-
-position:absolute;
-
-inset:-50px;
-
-border-radius:50%;
-
-border:1px solid rgba(0,191,255,.15);
-```
-
-}
-
-/* TEXT */
+/* =========================
+TEXT
+========================= */
 
 h1{
 
@@ -214,7 +292,9 @@ font-size:72px;
 
 letter-spacing:12px;
 
-margin-bottom:30px;
+font-weight:800;
+
+margin-bottom:20px;
 ```
 
 }
@@ -222,7 +302,7 @@ margin-bottom:30px;
 h2{
 
 ```
-font-size:20px;
+font-size:22px;
 
 color:#00bfff;
 
@@ -231,17 +311,19 @@ margin-bottom:20px;
 
 }
 
-p{
+.tagline{
 
 ```
 font-size:16px;
 
-color:#fff;
+letter-spacing:1px;
 ```
 
 }
 
-/* NODES */
+/* =========================
+NODES
+========================= */
 
 .nodes{
 
@@ -249,14 +331,15 @@ color:#fff;
 position:absolute;
 
 bottom:60px;
+left:50%;
 
-width:100%;
+transform:translateX(-50%);
 
 display:flex;
 
-justify-content:center;
+gap:28px;
 
-gap:35px;
+z-index:20;
 ```
 
 }
@@ -265,7 +348,6 @@ gap:35px;
 
 ```
 width:95px;
-
 height:95px;
 
 border-radius:50%;
@@ -273,14 +355,12 @@ border-radius:50%;
 border:1px solid rgba(0,191,255,.35);
 
 display:flex;
-
-align-items:center;
-
 justify-content:center;
+align-items:center;
 
 cursor:pointer;
 
-transition:.3s;
+transition:.35s;
 ```
 
 }
@@ -288,13 +368,73 @@ transition:.3s;
 .node:hover{
 
 ```
-transform:translateY(-8px);
+transform:translateY(-10px);
 
 border-color:#00bfff;
 
 box-shadow:
 0 0 20px #00bfff,
-0 0 40px #00bfff;
+0 0 50px rgba(0,191,255,.5);
+```
+
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+@keyframes pulse{
+
+```
+0%,100%{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+}
+
+50%{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.08);
+}
+```
+
+}
+
+@keyframes spin{
+
+```
+from{
+    transform:
+    translate(-50%,-50%)
+    rotate(0deg);
+}
+
+to{
+    transform:
+    translate(-50%,-50%)
+    rotate(360deg);
+}
+```
+
+}
+
+@keyframes spinReverse{
+
+```
+from{
+    transform:
+    translate(-50%,-50%)
+    rotate(360deg);
+}
+
+to{
+    transform:
+    translate(-50%,-50%)
+    rotate(0deg);
+}
 ```
 
 }
