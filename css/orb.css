@@ -163,3 +163,38 @@
         0 0 220px #0077ff;
     }
 }
+.particle{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    background:#7cecff;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #00bfff,
+    0 0 20px #00bfff;
+}
+
+.p1{
+    top:20%;
+    left:20%;
+}
+
+.p2{
+    top:35%;
+    right:18%;
+}
+
+.p3{
+    bottom:25%;
+    left:30%;
+}
+
+.p4{
+    bottom:20%;
+    right:25%;
+}
