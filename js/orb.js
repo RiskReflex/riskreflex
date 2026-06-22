@@ -1,10 +1,13 @@
-const orb = document.querySelector('.orb');
+const orb = document.querySelector('.orb-core');
 
-document.addEventListener('mousemove',(e)=>{
+document.addEventListener('mousemove', (e) => {
 
-    let x = (window.innerWidth/2 - e.pageX)/40;
-    let y = (window.innerHeight/2 - e.pageY)/40;
+    const x =
+        (window.innerWidth / 2 - e.pageX) / 40;
+
+    const y =
+        (window.innerHeight / 2 - e.pageY) / 40;
 
     orb.style.transform =
-        `translate(${x}px,${y}px)`;
+        `translate(${x}px, ${y}px)`;
 });
